@@ -56,7 +56,7 @@ Faça o playback do bagfile em modo contínuo (flag -l).
 
 [source,bash]
 -----------------------------------------------------------------
-➜  pari rosbag info lidar_example.bag
+➜   rosbag info lidar_example.bag
 path:        lidar_example.bag
 version:     2.0
 duration:    23.2s
@@ -112,7 +112,7 @@ Esta núvem de pontos correspondente a cada laser scan deve ser publicada.
 
 [TIP]
 ============================================
-Crie um novo package ros _pari_aula10_ onde irá colocar todos os scripts desenvolvidos.
+Crie um novo package ros __aula10_ onde irá colocar todos os scripts desenvolvidos.
 ============================================
 
 Pode ver aqui um https://youtu.be/uZ1pPMIeyw4[vídeo com uma demonstração] do que se pretende.

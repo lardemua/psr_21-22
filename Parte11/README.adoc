@@ -111,11 +111,11 @@ Escreva um ficheiro _scara.urdf_ do robô scara esquematizado na figura. Siga os
 
 [.text-center]
 .Um esquema de um robô scara e da sua cadeia cinemática.
-image::docs/pari_scara.jpg[]
+image::docs/_scara.jpg[]
 
 [TIP]
 =================
-Crie um novo package ROS pari_parte11_scara_description (<robot_name>_description é o nome habitualmente dado aos packages que contêm os ficheiros URDF).
+Crie um novo package ROS _parte11_scara_description (<robot_name>_description é o nome habitualmente dado aos packages que contêm os ficheiros URDF).
 Dentro desse package crie uma pasta urdf e coloque o ficheiro URDF lá dentro.
 =================
 

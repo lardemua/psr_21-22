@@ -893,10 +893,10 @@ O **F**estival **N**acional de **R**obótica (fnr) tem uma prova de condução a
 em que os robôs devem conduzir autonomamente numa pista semelhante a uma estrada.
 Aqui um exemplo do https://youtu.be/GowKB6aooLI[robô AtlasMV em prova].
 
-Utilize o pacote ROS **pari_fnr** incluído para Parte12 para
+Utilize o pacote ROS **_fnr** incluído para Parte12 para
 lançar o mundo Gazebo **fnr**.
 
-O **pari_fnr** deve estar sob uma diretoria do ROS_PACKAGE_PATH.
+O **_fnr** deve estar sob uma diretoria do ROS_PACKAGE_PATH.
 Faça uma atualização dos pacotes com o comando:
 
    rospack profile

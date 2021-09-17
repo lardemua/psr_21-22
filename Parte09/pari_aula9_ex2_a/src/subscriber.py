@@ -8,7 +8,7 @@
 import argparse
 from colorama import Fore
 import rospy
-from pari_aula8_ex4.msg import Dog
+from _aula8_ex4.msg import Dog
 
 highlight_text_color = 'RED'
 

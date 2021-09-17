@@ -93,7 +93,7 @@ sentido.
 
 Os guiões para as aulas estarão a ser continuamente atualizados em:
 
-https://github.com/miguelriemoliveira/pari_20-21
+https://github.com/miguelriemoliveira/_20-21
 
 Recomenda-se que, sempre que possível, usem a versão online.
 

@@ -10,7 +10,7 @@ from colorama import Fore
 import rospy
 from std_msgs.msg import String
 from dog_lib import Dog
-from pari_aula8_ex4_A.msg import Dog_A
+from _aula8_ex4_A.msg import Dog_A
 
 def main():
     parser = argparse.ArgumentParser(description='test')

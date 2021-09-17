@@ -32,7 +32,7 @@ Neste exercício pretende-se alterar o código do exercício 3 da aula passada d
 .Exemplo de chamada o publicador com remapeamento de nome de nó, tópicos e serviços
 [source,bash]
 -----------------------------------------------------------------
-rosrun pari_aula9_ex1 publisher.py chatter:=my_chat __name:=my_node ~set_dog_name:=set_my_dog_name
+rosrun _aula9_ex1 publisher.py chatter:=my_chat __name:=my_node ~set_dog_name:=set_my_dog_name
 -----------------------------------------------------------------
 
 [TIP]
@@ -127,7 +127,7 @@ A título de exemplo vamos continuar a utilizar os nós dos últimos exercícios
 .Esboço do sistema
 image::docs/PARI_Aula9_Ex4.jpg[]
 
-Crie um ROS package com o nome _pari_aula9_ex4_bringup_  (bringup é um sufixo normalmente dado aos ros packages que fazem o lançamento de sistemas).
+Crie um ROS package com o nome __aula9_ex4_bringup_  (bringup é um sufixo normalmente dado aos ros packages que fazem o lançamento de sistemas).
 Nesse pacote, na pasta _launch_ crie um _bringup.launch_ que faça o lançamento do sistema esquematizado.
 
 .Exemplo de um launch file simples.
@@ -190,9 +190,9 @@ end:         Sep 25 2020 12:06:33.94 (1601031993.94)
 size:        9.6 KB
 messages:    39
 compression: none [1/1 chunks]
-types:       pari_aula8_ex4/Dog [d3e481097da3769123b9dd1b566c9cb3]
-topics:      dog1   26 msgs    : pari_aula8_ex4/Dog (2 connections)
-             dog2   13 msgs    : pari_aula8_ex4/Dog
+types:       _aula8_ex4/Dog [d3e481097da3769123b9dd1b566c9cb3]
+topics:      dog1   26 msgs    : _aula8_ex4/Dog (2 connections)
+             dog2   13 msgs    : _aula8_ex4/Dog
 -----------------------------------------------------------------
 
 [TIP]

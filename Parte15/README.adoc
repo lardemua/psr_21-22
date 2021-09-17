@@ -33,7 +33,7 @@ Para lançar esta arena de jogo basta chamar este _world_ no ficheiro de bringup
     <!-- <arg name="world" default="$(find turtlebot3_gazebo)/worlds/empty.world"/>-->
     <arg name="world" default="$(find th_description)/worlds/th_arena.world"/>
     <!--    <arg name="world" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>-->
-    <!--    <arg name="world" default="$(find pari_fnr)/worlds/fnr.world"/>-->
+    <!--    <arg name="world" default="$(find _fnr)/worlds/fnr.world"/>-->
 
     (...)
 </launch>

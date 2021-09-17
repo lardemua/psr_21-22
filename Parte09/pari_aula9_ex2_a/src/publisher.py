@@ -11,8 +11,8 @@ from functools import partial
 
 import rospy
 from std_msgs.msg import String
-from pari_aula8_ex4.msg import Dog
-from pari_aula8_ex5.srv import SetDogName, SetDogNameResponse
+from _aula8_ex4.msg import Dog
+from _aula8_ex5.srv import SetDogName, SetDogNameResponse
 
 
 def setDogNameCallback(request, dog):
@@ -52,7 +52,7 @@ def main():
         rate.sleep()
 
     # Call nome with names remapping like this:
-    # rosrun pari_aula9_ex1 publisher.py chatter:=my_chat __name:=my_node ~set_dog_name:=set_my_dog_name
+    # rosrun _aula9_ex1 publisher.py chatter:=my_chat __name:=my_node ~set_dog_name:=set_my_dog_name
 
 if __name__ == '__main__':
     main()
