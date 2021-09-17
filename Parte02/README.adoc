@@ -1,7 +1,7 @@
-Parte 2 - PARI
+Parte 2 - PSR
 =============
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -43,7 +43,7 @@ pode ser prático para efeitos de portabilidade do documento:
 
 Pode também visualizar diretamente os ficheiros adoc no github em
 
-https://github.com/miguelriemoliveira/pari_20-21
+https://github.com/miguelriemoliveira/psr_20-21
 
 ou usar um IDE (por exemplo o pycharm) para o fazer.
 
@@ -113,7 +113,7 @@ https://realpython.com/python-comments-guide/[tutorial] sobre como comentar cód
 # --------------------------------------------------
 # A simple python script to print hello world!
 # Miguel Riem Oliveira.
-# PARI, Setember 2020.
+# PSR, Setember 2020.
 # --------------------------------------------------
 
 maximum_number = 100  # maximum number to test.

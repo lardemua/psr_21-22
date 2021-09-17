@@ -1,7 +1,7 @@
-= Parte 12 - PARI
+= Parte 12 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -711,7 +711,7 @@ Assim, pretende-se transformar o ficheiro _player.gazebo.xacro_ numa http://wiki
 <robot name="p_moliveira" xmlns:xacro="http://ros.org/wiki/xacro">
   <!--  Xacro description of turtlebot robot waffle pi used to play team hunt.-->
   <!--  Miguel Riem Oliveira-->
-  <!--  PARI, November 2020-->
+  <!--  PSR, November 2020-->
 
   <!--Args are local, properties are global, so we copy the values of the arguments to the properties-->
   <xacro:arg name="player_name" default="p_moliveira" />
@@ -893,10 +893,10 @@ O **F**estival **N**acional de **R**obótica (fnr) tem uma prova de condução a
 em que os robôs devem conduzir autonomamente numa pista semelhante a uma estrada.
 Aqui um exemplo do https://youtu.be/GowKB6aooLI[robô AtlasMV em prova].
 
-Utilize o pacote ROS **pari_fnr** incluído para Parte12 para
+Utilize o pacote ROS **psr_fnr** incluído para Parte12 para
 lançar o mundo Gazebo **fnr**.
 
-O **pari_fnr** deve estar sob uma diretoria do ROS_PACKAGE_PATH.
+O **psr_fnr** deve estar sob uma diretoria do ROS_PACKAGE_PATH.
 Faça uma atualização dos pacotes com o comando:
 
    rospack profile

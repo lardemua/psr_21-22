@@ -1,7 +1,7 @@
-= Parte 15 - PARI
+= Parte 15 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -33,7 +33,7 @@ Para lançar esta arena de jogo basta chamar este _world_ no ficheiro de bringup
     <!-- <arg name="world" default="$(find turtlebot3_gazebo)/worlds/empty.world"/>-->
     <arg name="world" default="$(find th_description)/worlds/th_arena.world"/>
     <!--    <arg name="world" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_house.world"/>-->
-    <!--    <arg name="world" default="$(find pari_fnr)/worlds/fnr.world"/>-->
+    <!--    <arg name="world" default="$(find psr_fnr)/worlds/fnr.world"/>-->
 
     (...)
 </launch>

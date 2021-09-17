@@ -1,7 +1,7 @@
-= Parte 5 - PARI
+= Parte 5 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5

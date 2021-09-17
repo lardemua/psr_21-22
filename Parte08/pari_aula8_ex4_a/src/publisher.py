@@ -2,7 +2,7 @@
 
 # --------------------------------------------------
 # Miguel Riem Oliveira.
-# PARI, September 2020.
+# PSR, September 2020.
 # Adapted from http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29
 # -------------------------------------------------
 import argparse
@@ -10,7 +10,7 @@ from colorama import Fore
 import rospy
 from std_msgs.msg import String
 from dog_lib import Dog
-from pari_aula8_ex4_A.msg import Dog_A
+from psr_aula8_ex4_A.msg import Dog_A
 
 def main():
     parser = argparse.ArgumentParser(description='test')

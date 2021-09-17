@@ -2,7 +2,7 @@
 # --------------------------------------------------
 # A simple python script to print hello world!
 # Miguel Riem Oliveira.
-# PARI, Setember 2020.
+# PSR, Setember 2020.
 # --------------------------------------------------
 from copy import deepcopy
 

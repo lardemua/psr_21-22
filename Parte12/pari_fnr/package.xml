@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>pari_fnr</name>
+  <name>psr_fnr</name>
   <version>0.0.0</version>
-  <description>The pari_fnr package</description>
+  <description>The psr_fnr package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/pari_fnr</url> -->
+  <!-- <url type="website">http://wiki.ros.org/psr_fnr</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->

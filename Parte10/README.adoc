@@ -1,7 +1,7 @@
-= Parte 10 - PARI
+= Parte 10 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -56,7 +56,7 @@ Faça o playback do bagfile em modo contínuo (flag -l).
 
 [source,bash]
 -----------------------------------------------------------------
-➜  pari rosbag info lidar_example.bag
+➜  psr rosbag info lidar_example.bag
 path:        lidar_example.bag
 version:     2.0
 duration:    23.2s
@@ -112,7 +112,7 @@ Esta núvem de pontos correspondente a cada laser scan deve ser publicada.
 
 [TIP]
 ============================================
-Crie um novo package ros _pari_aula10_ onde irá colocar todos os scripts desenvolvidos.
+Crie um novo package ros _psr_aula10_ onde irá colocar todos os scripts desenvolvidos.
 ============================================
 
 Pode ver aqui um https://youtu.be/uZ1pPMIeyw4[vídeo com uma demonstração] do que se pretende.
@@ -151,7 +151,7 @@ Pode também visualizar dados de outros sensores 3D mais recentes como um velody
 Exercício 4 - Câmaras RGB
 -------------------------
 
-As câmaras RGB são as câmaras do espectro visível a que mais estamos habituados. Um exemplo é a câmara o portátil que usamos no PARI AR Paint.
+As câmaras RGB são as câmaras do espectro visível a que mais estamos habituados. Um exemplo é a câmara o portátil que usamos no PSR AR Paint.
 As imagens de câmaras em ROS são enviadas em mensagens do tipo http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Image.html[sensor_msgs/Image].
 Tais como as point clouds, estas são mensagens complexas visto que suportam vários tipos de imagens com diferentes parâmetros de configuração:
 

@@ -1,7 +1,7 @@
-Aula 4 - PARI
+Aula 4 - PSR
 =============
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -13,7 +13,7 @@ Miguel Riem Oliveira <mriem@ua.pt>
 Avaliação - escrita de um programa para testes de typing.
 -------------------------------------------------------------
 
-PARI Typing Test
+PSR Typing Test
 ----------------
 
 Deve desenvolver um programa similar a um https://www.typingtest.com/[typing test].

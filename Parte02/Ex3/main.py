@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Miguel Riem Oliveira
-# PARI
+# PSR
 import argparse
 
 

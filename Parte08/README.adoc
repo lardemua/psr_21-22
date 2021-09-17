@@ -1,7 +1,7 @@
-= Parte 8 - PARI
+= Parte 8 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -46,7 +46,7 @@ Note que a informação enviada é de vários tipos (numérica, texto).
 #!/usr/bin/env python
 # --------------------------------------------------
 # Miguel Riem Oliveira.
-# PARI, September 2020.
+# PSR, September 2020.
 # Adapted from https://stackabuse.com/basic-socket-programming-in-python/
 # --------------------------------------------------
 import socket
@@ -91,7 +91,7 @@ while True:
 #!/usr/bin/env python
 # --------------------------------------------------
 # Miguel Riem Oliveira.
-# PARI, September 2020.
+# PSR, September 2020.
 # Adapted from https://stackabuse.com/basic-socket-programming-in-python/
 # -------------------------------------------------
 import socket
@@ -182,13 +182,13 @@ Imprima as instâncias nos dois programas para confirmar que são cópias exatas
 Exercício 3 - Publicação e subscrição em ROS
 --------------------------------------------
 
-Crie um http://wiki.ros.org/ROS/Tutorials/CreatingPackage[novo pacote ROS] com o nome pari_aula8_ex3.
+Crie um http://wiki.ros.org/ROS/Tutorials/CreatingPackage[novo pacote ROS] com o nome psr_aula8_ex3.
 
 [TIP]
 ============================================
 O package deve depender do _rospy_ (aliás, todos os packages que conteham programas em python devem depender do ropsy) e também do http://wiki.ros.org/std_msgs[_std_msgs_] e.g.:
 
-    catkin_create_pkg pari_aula8_ex3 std_msgs rospy
+    catkin_create_pkg psr_aula8_ex3 std_msgs rospy
 ============================================
 
 Depois, adapte o http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29[exemplo de publicação / subscrição] de modo
@@ -219,7 +219,7 @@ do exercício 3 de modo a que a informação enviada seja a mesma que no exercí
 ============================================
 Sempre que quiser aproveitar código de um package ROS, deverá primeiro criar o package novo e depois copiar o source code para o novo package.
 Não pode pura e simplesmente copiar a pasta com o package, porque isso não atualiza muita da informação que está nos ficheiros de configuração _package.xml_ e _CMakeLists.txt_.
-Crie um novo pacote ROS com o nome _pari_aula8_ex4_, e copie para lá os ficheiros python do exercício anterior.
+Crie um novo pacote ROS com o nome _psr_aula8_ex4_, e copie para lá os ficheiros python do exercício anterior.
 ============================================
 
 [TIP]

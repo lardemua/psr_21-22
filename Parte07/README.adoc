@@ -1,7 +1,7 @@
-= Parte 7 - PARI
+= Parte 7 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -10,10 +10,10 @@ Miguel Riem Oliveira <mriem@ua.pt>
 
 .Sumário
 -------------------------------------------------------------
-Avaliação - PARI AR Paint
+Avaliação - PSR AR Paint
 -------------------------------------------------------------
 
-PARI Augmented Reality Paint
+PSR Augmented Reality Paint
 ----------------------------
 
 Pretende-se desenvolver um conjunto de aplicações cuja funcionalidade principal é permitir ao utilizador desenhar numa imagem movendo um objeto colorido em frente à câmara do portátil.

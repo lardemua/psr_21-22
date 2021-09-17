@@ -1,7 +1,7 @@
-= Parte 6 - PARI
+= Parte 6 - PSR
 
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -27,7 +27,7 @@ Carregue a imagem atlascar.png e desenhe um círculo no seu centro com a funçã
 1 b)
 ~~~~
 
-Adicione o texto 'PARI' à imagem a vermelho usando a funçao _cv2.putText()_
+Adicione o texto 'PSR' à imagem a vermelho usando a funçao _cv2.putText()_
 
 1 c)
 ~~~~

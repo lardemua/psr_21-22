@@ -1,7 +1,7 @@
-Parte 3 - PARI
+Parte 3 - PSR
 =============
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -23,7 +23,7 @@ Crie um repositório no https://github.com/[github] para esta aula. Para isso te
 
 https://github.com/miguelriemoliveira
 
-Depois deve criar um repositório chamado pari_2020 e descarregá-lo para o seu computador com o comando git clone:
+Depois deve criar um repositório chamado psr_2020 e descarregá-lo para o seu computador com o comando git clone:
 
      git clone <url do repositório>
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # --------------------------------------------------
 # Miguel Riem Oliveira.
-# PARI, September 2020.
+# PSR, September 2020.
 # Adapted from https://stackabuse.com/basic-socket-programming-in-python/
 # -------------------------------------------------
 import socket

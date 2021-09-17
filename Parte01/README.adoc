@@ -1,7 +1,7 @@
-Parte 1 - PARI
+Parte 1 - PSR
 =============
 Miguel Riem Oliveira <mriem@ua.pt>
-2020-2021
+2021-2022
 
 // Instruções especiais para o asciidoc usar icons no output
 :icons: html5
@@ -68,7 +68,7 @@ Mais informações podem ser obtidas por exemplo nos seguintes endereços:
 
 Parte 1 - Apresentação e generalidades
 --------------------------------------
-Ver o documento `0-PARI2019-2020-Apresentação`
+Ver o documento `0-PSR2019-2020-Apresentação`
 
 
 Parte 2 - Introdução ao Linux e a Shell
@@ -93,7 +93,7 @@ sentido.
 
 Os guiões para as aulas estarão a ser continuamente atualizados em:
 
-https://github.com/miguelriemoliveira/pari_20-21
+https://github.com/miguelriemoliveira/psr_20-21
 
 Recomenda-se que, sempre que possível, usem a versão online.
 
