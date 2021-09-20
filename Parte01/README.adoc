@@ -13,18 +13,15 @@ Introdução
     Apresentação
     Objetivos
     Avaliação
-Introdução ao Linux - A shell
+Introdução ao Linux - O terminal
 Alguns comandos básicos
-Redirecionamento (saida e entrada de comandos)
-Pipes e encadeamento de comandos
 Programas elementares em python
 -----------------------------------------------
-
 
 [TIP]
 ===================================================
 .Pressupostos para a realização dos exercícios
-- Ter o Linux instalado (ubuntu 18.04 *altamente recomendado*).
+- Ter o Linux instalado (ubuntu 20.04 *altamente recomendado*).
 - Ter o acesso de rede configurado (_wireless_).
 *   Consultar as instruções do site dos 
 http://www.ua.pt/stic/PageText.aspx?id=15224[sTIC].
@@ -33,7 +30,7 @@ http://www.ua.pt/stic/PageText.aspx?id=15224[sTIC].
 
 Instalação do Ubuntu
 --------------------
-Existem diveras formas de usar o Ubuntu para quem tem outros sistemas
+Existem diversas formas de usar o Ubuntu para quem tem outros sistemas
 operativos (Windows, MacOS). As mais interessantes são:
 
   . Uso do live ubuntu: https://tutorials.ubuntu.com/tutorial/try-ubuntu-before-you-install[Try before you install]
@@ -66,18 +63,19 @@ Mais informações podem ser obtidas por exemplo nos seguintes endereços:
 
 
 
-Parte 1 - Apresentação e generalidades
---------------------------------------
+Apresentação e generalidades
+----------------------------
 Ver o documento `0-PSR2019-2020-Apresentação`
 
 
-Parte 2 - Introdução ao Linux e a Shell
----------------------------------------
+Introdução ao Linux e a Shell
+-----------------------------
+
 Ver o documento  `1-Linux-Breve Introdução`
 
 
-Parte 3 - Criação do ambiente e instalação de ferramentas básicas
------------------------------------------------------------------
+Criação do ambiente e instalação de ferramentas básicas
+-------------------------------------------------------
 
 Metodologia
 ~~~~~~~~~~~
@@ -93,7 +91,7 @@ sentido.
 
 Os guiões para as aulas estarão a ser continuamente atualizados em:
 
-https://github.com/miguelriemoliveira/psr_20-21
+https://github.com/miguelriemoliveira/psr_21-22
 
 Recomenda-se que, sempre que possível, usem a versão online.
 

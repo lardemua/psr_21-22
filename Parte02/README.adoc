@@ -43,7 +43,7 @@ pode ser prático para efeitos de portabilidade do documento:
 
 Pode também visualizar diretamente os ficheiros adoc no github em
 
-https://github.com/miguelriemoliveira/psr_20-21
+https://github.com/miguelriemoliveira/psr_21-22
 
 ou usar um IDE (por exemplo o pycharm) para o fazer.
 

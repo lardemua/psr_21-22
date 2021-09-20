@@ -1,6 +1,6 @@
-# Projeto em Automação e Robótica Industrial
+# Programação de Sistemas Robóticos
 
-**Departamento de Engenharia Mecânica**
+Miguel Riem Oliveira
 
 **Universidade de Aveiro**
 
