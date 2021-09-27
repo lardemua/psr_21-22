@@ -39,7 +39,7 @@ Para lançar esta arena de jogo basta chamar este _world_ no ficheiro de bringup
 </launch>
 --------------------------------------------------------
 
-Exercício 2 - O àrbitro
+Exercício 2 - O árbitro
 -----------------------
 
 Uma vez que é preciso ter sempre alguém
@@ -47,12 +47,12 @@ Uma vez que é preciso ter sempre alguém
 é necessário que alguma entidade desempenhe este papel.
 
 O nó **th_referee** é um programa responsável por verificar continuamente vários parâmetros do jogo.
-Um dos principais parâmetros é a colisão entre um caçador e uma presa, que é o evento que atribuí pontos à equipa do caçador, e retira pontos à equipa da presa.
+Um dos principais parâmetros é a colisão entre um caçador e uma presa, que é o evento que at´ribuí pontos à equipa do caçador, e retira pontos à equipa da presa.
 
-Por não haver tempo suficiente o àrbitro é dado já desenvolvido, cabendo aos alunos integrar este software
+Por não haver tempo suficiente o árbitro é dado já desenvolvido, cabendo aos alunos integrar este software
 na sua framework de modo a conseguir executar jogos de **Team Hunt**.
 
 Recomenda-se que este nó seja executado num terminal separado por forma a ser o único programa a imprimir para o terminal,
 visto que este nó imprime o score do jogo ao longo do tempo.
 
-Este https://youtu.be/3RablFrylyw[vídeo] mostra o jogo com o àrbitro operacional.
+Este https://youtu.be/3RablFrylyw[vídeo] mostra o jogo com o árbitro operacional.
