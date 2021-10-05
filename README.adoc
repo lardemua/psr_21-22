@@ -30,7 +30,7 @@ Miguel Riem Oliveira
 |image:docs/OptimizationWithRViz.gif[] https://github.com/lardemua/atom[ATOM]
 |===
 
-Toda a documentação referente às aulas estará colocada neste repositório. Não obstante, deve também ver consultar periodicamente a https://elearning.ua.pt/course/view.php?id=2011[página de elearning] da UC.
+Toda a documentação referente às aulas estará colocada neste repositório. Não obstante, deve também ver consultar periodicamente a https://elearning.ua.pt/course/view.php?id=36292[página de elearning] da UC.
 Pode entrar em cada uma das pastas para ver os guiões. Utilize sempre a visualização
 do _README.adoc_ para se assegurar que está a visualizar a versão mais recente do documento.
 

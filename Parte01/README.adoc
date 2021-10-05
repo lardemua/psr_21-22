@@ -14,14 +14,15 @@ Introdução
     Objetivos
     Avaliação
 Introdução ao Linux - O terminal
-Alguns comandos básicos
+Editores e IDEs
 Programas elementares em python
 -----------------------------------------------
 
-[TIP]
+
 ===================================================
 .Pressupostos para a realização dos exercícios
 - Ter o Linux instalado (ubuntu 20.04 *altamente recomendado*).
+- Instalação do Linux em modo dual boot (*altamente recomendado*).
 - Ter o acesso de rede configurado (_wireless_).
 *   Consultar as instruções do site dos 
 http://www.ua.pt/stic/PageText.aspx?id=15224[sTIC].
@@ -61,17 +62,15 @@ Mais informações podem ser obtidas por exemplo nos seguintes endereços:
   * https://tutorials.ubuntu.com/
   * https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop
 
-
-
 Apresentação e generalidades
 ----------------------------
-Ver o documento `0-PSR2019-2020-Apresentação`
 
+Ver slides de apresentação da UC.
 
 Introdução ao Linux e a Shell
 -----------------------------
 
-Ver o documento  `1-Linux-Breve Introdução`
+Ver o documento  `1-Linux-Breve Introdução`.
 
 
 Criação do ambiente e instalação de ferramentas básicas
@@ -93,14 +92,14 @@ Os guiões para as aulas estarão a ser continuamente atualizados em:
 
 https://github.com/miguelriemoliveira/psr_21-22
 
-Recomenda-se que, sempre que possível, usem a versão online.
+Recomenda-se que, sempre que possível, usem a versão online ou façam o update.
 
 Editor
 ~~~~~~
 A ferramenta principal para criar e modificar ficheiros é o editor, muitas
 vezes integrado num ambiente de desenvolvimento (IDE). Há inúmeras opções
 desde simples editores (`gedit`, `kate`, `kwrite`, etc.) até ambientes de
-desenvolvimento muito sofisticados (`codeblocks`, `eclipse`, `vscode`, etc.).
+desenvolvimento muito sofisticados (`codeblocks`, `eclipse`, `vscode`,`pycharm` etc.).
 
 Além das propriedades fundamentais dos editores, hoje em dia são excelentes
 _add-ons_ a "automated completion" (preenchimento automático de palavras
@@ -115,15 +114,17 @@ permite todas as facilidades indicadas acima, mas a sua configuração,
 por ser praticamente ilimitada, pode-se tornar complexa e, por isso,
 contraproducente em utilizadores iniciados.
 
-Recomenda-se como IDE o https://www.jetbrains.com/pycharm/[pycharm]. Pode-se utilizar a licença profissional ou a licença base. Os estudantes podem solicitar acesso à https://www.jetbrains.com/community/education/#students[licença profissional].
+===================================================
+**Recomenda-se como IDE** o https://www.jetbrains.com/pycharm/[pycharm]. Pode-se utilizar a licença profissional ou a licença base. Os estudantes podem solicitar acesso à https://www.jetbrains.com/community/education/#students[licença profissional].
+===================================================
 
 Outra alternativa uma solução disponibilizada
 pela Microsoft para muitas plataformas, incluindo linux. Trata-se do 'Visual Studio Code' ou 'vscode'.
 Pode ser instalado diretamente do gestor de aplicações do Ubuntu ('Ubuntu
 Software') ou por outras vias (https://askubuntu.com/questions/616075/how-do-i-install-visual-studio-code).
 
-Parte 4 - Primeiros exercícios de programação em Python
--------------------------------------------------------
+Primeiros exercícios de programação em Python
+---------------------------------------------
 
 Exercício 1
 ~~~~~~~~~~~
@@ -216,7 +217,5 @@ def main():
 if __name__ == "__main__":
     main()
 ----------------------------------
-
-
 
 // vim: set syntax=asciidoc:
