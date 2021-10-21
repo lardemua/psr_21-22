@@ -34,12 +34,7 @@ Toda a documentação referente às aulas estará colocada neste repositório. N
 Pode entrar em cada uma das pastas para ver os guiões. Utilize sempre a visualização
 do _README.adoc_ para se assegurar que está a visualizar a versão mais recente do documento.
 
-Aulas quartas feiras, 9h-13h.
-Link para sessão zoom:
-
-https://videoconf-colibri.zoom.us/j/95298085302?pwd=cFRZRXZVRTBtNkMyenp1eXZBNXppQT09
-
-Password: <está no elearning>
+Link para as sessões zoom das aulas está no elearning.
 
 Miguel Riem Oliveira
 
