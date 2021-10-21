@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 O pydoc permite gerar um html com documentação sobre um módulo python partindo dos comentários inseridos em formato docstring. Para instalar:
 
-	sudo apt-get install python-doc
+    sudo apt-get install python-doc8-doc
 
 e depois, na pasta de um qualquer exercício:
 
@@ -148,6 +148,19 @@ Escrever uma função `printAllPreviousChars()` que não tem parâmetros e não
 retorna nada, mas que quando executada lê um caractere do teclado
 usando a função https://pypi.org/project/readchar/[readchar] e imprime todos os
 caracteres desde o espaço ' ' até esse caractere, considerando a numeração de caracteres da http://www.asciitable.com/[tabela asccii].
+
+==============================
+.Instalação do pacote readchar
+
+O readchar permite ler um caracter do terminal.
+
+https://pypi.org/project/readchar/
+
+Para instalar:
+
+    sudo pip install readchar
+
+==============================
 
 Completar o código fornecido com o código que falta.
 
