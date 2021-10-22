@@ -48,6 +48,9 @@ def readAllUpTo(stop_key):
     print('You entered ' + str(count_pressed_numbers) + ' numbers: ' + str(pressed_numbers))
     print('You entered ' + str(count_pressed_others) + ' others:' +  str(pressed_others))
 
+    lst_comp_pressed_numbers = [x for x in pressed_keys if str.isnumeric(x)]
+    print('lst_comp_pressed_numbers = ' + str(lst_comp_pressed_numbers))
+
 def main():
 
 
