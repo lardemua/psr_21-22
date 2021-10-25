@@ -31,7 +31,7 @@ Exercício 1 - Tempo e Temporizadores
 ------------------------------------
 
 A utilização de estruturas de tempo em python está bastante facilitada
-https://www.w3schools.com/python/python_classes.asp[tutorial]
+https://www.programiz.com/python-programming/time[tutorial].
 
 O comando
 
