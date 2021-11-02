@@ -29,6 +29,12 @@ def printComplex(x, prefix=''):
     b = x.i
     print(prefix + str(a) + '+' + str(b) + 'i')
 
+def addTwo(self, x, y):
+    a = x.r
+    b = x.i
+    c = y.r
+    d = y.i
+    return ComplexClass(r=a + c, i=b + d)
 
 class ComplexClass:
     def __init__(self, r, i):
@@ -61,12 +67,20 @@ def main():
     # Create a complex number as an instance of class ComplexClass
 
     c1 = ComplexClass(4, 8)
+    print('c1')
+    print(c1)
     c2 = ComplexClass(6, -7)
-    print(c1)
-    c1.add(c2)
-    print(c1)
-    c1.multiply(c2)
-    print(c1)
+    print('c2')
+    print(c2)
+
+    c3 = addTwo(c2, c2)
+
+    print('c3')
+    print(c3)
+    # c1.add(c2)
+    # print(c1)
+    # c1.multiply(c2)
+    # print(c1)
 
 
 if __name__ == '__main__':
