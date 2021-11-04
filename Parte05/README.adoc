@@ -21,7 +21,7 @@ Instalação
 
 Para instalar o opencv com os bindings em python usar o comando:
 
-   sudo apt-get install python-opencv
+   sudo apt-get install python3-opencv
 
 Mais informação em https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html
 

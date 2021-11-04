@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import time
+
 import colorama
 
 from collections import namedtuple
@@ -73,10 +75,12 @@ def main():
     print('c2')
     print(c2)
 
-    c3 = addTwo(c2, c2)
+    print('Doing nothing for 30secs ...')
+    time.sleep(300)
+    # c3 = addTwo(c2, c2)
 
-    print('c3')
-    print(c3)
+    # print('c3')
+    # print(c3)
     # c1.add(c2)
     # print(c1)
     # c1.multiply(c2)
