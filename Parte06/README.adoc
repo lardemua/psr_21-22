@@ -7,7 +7,6 @@ Miguel Riem Oliveira <mriem@ua.pt>
 :icons: html5
 :iconsdir: /etc/asciidoc/images/icons
 
-
 .Sumário
 -------------------------------------------------------------
 Continuação do OpenCV.
