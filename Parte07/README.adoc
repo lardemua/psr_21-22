@@ -169,4 +169,4 @@ Depois de terminar de pintar a pointura numerada, o utilizador pode pedir ao pro
 Vídeo com exemplo
 -----------------
 Pode ver este https://youtu.be/ud119RI_Rpg[vídeo] com um exemplo do que se pretende.
-As funcionalidades avançadas 3,4 e 5 não estão presente no vídeo.
+As funcionalidades avançadas 3,4 e 5 não estão presentes no vídeo.
