@@ -151,7 +151,7 @@ Pretende-se substituir a tela branca pelas imagens capturadas periódicamente pe
 
 .**Funcionalidade avançada 3 - Desenhar formas na tela**
 
-Pretende-se que o programa consiga desenhar rectângulos e círculos na tela. Para o efeito o utilizador terá de premir a tecla correspondente (r ou c para rectângulo ou circulo) e enquanto a tecla está premida e a posição do centroide varia é possivel ver a forma a alterar. Por exemplo, se o utilizador pressionar a tecla "c" para indicar que quer desenahr um circulo na posição do centroide x=100, y=100, então o circulo terá centro nestas coordenadas e o raio será dado pela distância ente o centro e a posição do centroide quando a tecla "c" for libertada. Ver funcionalidade de desenhos do zoom.
+Pretende-se que o programa consiga desenhar rectângulos e círculos (ou elipses) na tela. Para o efeito o utilizador terá de premir a tecla correspondente (s ou e para _square_ ou _ellipse_) e enquanto a tecla está premida e a posição do centroide varia é possivel ver a forma a alterar. Por exemplo, se o utilizador pressionar a tecla "o" para indicar que quer desenhar um circulo na posição do centroide x=100, y=100, então o círculo terá centro nestas coordenadas e o raio será dado pela distância ente o centro e a posição do centroide quando a tecla "o" for libertada. Ver funcionalidade de desenhos do zoom. O zoom permite desenhar elipses e não círculos, pelo que o primeiro clique não define o centro mas sim um dos cantos da elipse. Faça apenas a funcionalidade de desenhar círculos como sugerido em cima.
 
 Uma explicação em video https://youtu.be/BRjUW17GcoE[aqui].
 
