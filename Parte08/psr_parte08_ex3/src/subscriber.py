@@ -3,10 +3,12 @@ import argparse
 
 import rospy
 from std_msgs.msg import String
+from psr_parte08_ex3.msg import Dog
 
 
 def callbackMsgReceived(msg):
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", msg.data)
+    rospy.loginfo("Received a dog named " + msg.name + ' which is ' + str(msg.age) +
+                  ' years old')
 
 
 def main():
@@ -18,7 +20,7 @@ def main():
     args = vars(parser.parse_args())
 
     rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber(args['topic'], String, callbackMsgReceived)
+    rospy.Subscriber(args['topic'], Dog, callbackMsgReceived)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
