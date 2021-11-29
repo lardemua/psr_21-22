@@ -155,7 +155,7 @@ Pode incluir o rqt_graph também no launch file.
 Pode ver exemplos de launch files mais complexos, por exemplo no caso do https://github.com/lardemua/atlascar2/tree/master/atlascar2_bringup/launch[AtlasCar2].
 ============================================
 
-Exercício 5 - Logging em ROS
+Exercício 6 - Logging em ROS
 ----------------------------
 
 Um _log_ é um ficheiro que regista vários eventos que ocorreram durante a sessão de gravação do log.
@@ -200,7 +200,7 @@ topics:      dog1   26 msgs    : psr_aula8_ex4/Dog (2 connections)
 Sugestão para o launch file: adicione um argumento de entrada _run_publishers_ cujo valor determina se os nós publicadores são lançados e, caso não sejam, seja lançado o playback de um bagfile.
 ============================================
 
-Exercício 6 - Visualização de um bagfile
+Exercício 7 - Visualização de um bagfile
 ----------------------------------------
 
 Descarregue este https://drive.google.com/file/d/1ILWRdSnRWpq3lWjgLCzMH5-o-abw2x8r/view?usp=sharing[bagfile], inspecione-o com o _rosbag info_ e faça o seu playback.
