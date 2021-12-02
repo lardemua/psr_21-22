@@ -137,8 +137,9 @@ image::docs/pr2.png[align="center"]
 
 
 Pretende-se neste exercício visualizar os dados do Lidar2D e do Lidar3D a bordo do PR2.
-Para o efeito, nesta página pode ter acesso a https://projects.csail.mit.edu/stata/downloads.php[vários bafiles do PR2]. Vamos utilizar um bagfile pequeno
-chamado _2011-04-06-07-04-17.bag_. Aqui o http://infinity.csail.mit.edu/data/2011/2011-04-06-07-04-17.bag[link direto para download] desse bag file.
+bagfile pequeno chamado pr2_mit_demo_pari.bag.
+Aqui o https://drive.google.com/file/d/1OsbOiF3TcFNe4eB8sDZqIjk4Wm_7Oevx/view?usp=sharing[link direto para download] desse bag file.
+//chamado _2011-04-06-07-04-17.bag_. Aqui o http://infinity.csail.mit.edu/data/2011/2011-04-06-07-04-17.bag[link direto para download] desse bag file.
 
 
 Descarregue o bagfile indicado e configure o RViz de modo a visualizar os dados dos dois Lidars.
