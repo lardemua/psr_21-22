@@ -3,7 +3,7 @@ import argparse
 
 import rospy
 from std_msgs.msg import String
-from psr_parte08_ex3.msg import Dog
+from psr_parte09_ex_tp.msg import Dog
 
 
 def callbackMsgReceived(msg):
@@ -15,17 +15,23 @@ def main():
     # ---------------------------------------------------
     # Initialization
     # ---------------------------------------------------
-    parser = argparse.ArgumentParser(description='PSR argparse example.')
-    parser.add_argument('--topic', type=str, default='chatter')
-    args = vars(parser.parse_args())
+    rospy.init_node('subscriber', anonymous=True)
+    rospy.Subscriber('chatter', Dog, callbackMsgReceived) # configure the subscriber
+    pub = rospy.Publisher('chatter', Dog, queue_size=10) # configure the publisher
 
-    rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber(args['topic'], Dog, callbackMsgReceived)
+    # create a dog message to send
+    dog = Dog()
+    dog.name = 'dog3'
+    dog.age = 1
+    dog.color = 'black'
 
+    rate = rospy.Rate(2)  # 1hz
     # ---------------------------------------------------
     # Execution
     # ---------------------------------------------------
-    rospy.spin()  # spin() simply keeps python from exiting until this node is stopped
+    while not rospy.is_shutdown():
+        pub.publish(dog)
+        rate.sleep()
 
 
 if __name__ == '__main__':

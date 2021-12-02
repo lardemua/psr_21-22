@@ -3,7 +3,7 @@ import argparse
 
 import rospy
 from std_msgs.msg import String
-from psr_parte08_ex3.msg import Dog
+from psr_parte09_preparation.msg import Dog
 
 
 def callbackMsgReceived(msg):

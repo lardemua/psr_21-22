@@ -1,29 +1,27 @@
 #!/usr/bin/env python3
 import argparse
 
+import colorama
 import rospy
 from std_msgs.msg import String
-from psr_parte08_ex3.msg import Dog
+from psr_parte09_ex_tp.msg import Dog
 
 
 def main():
     # ---------------------------------------------------
     # INITIALIZATION
     # ---------------------------------------------------
-    parser = argparse.ArgumentParser(description='PSR argparse example.')
-    parser.add_argument('--message', type=str, default='Do not know what to say ')
-    parser.add_argument('--rate', type=float, default=1)
-    args = vars(parser.parse_args())
-
-    rospy.init_node('talker', anonymous=True)
+    rospy.init_node('publisher', anonymous=True)
     pub = rospy.Publisher('chatter', Dog, queue_size=10)
-    rate = rospy.Rate(args['rate'])  # 10hz
 
+    # read private parameter
 
     # ---------------------------------------------------
     # Execution
     # ---------------------------------------------------
     while not rospy.is_shutdown():
+        # read global parameter
+        highlight_text_color = rospy.get_param("/highlight_text_color")
 
         # create a dog message to sent
         dog = Dog()
@@ -33,7 +31,13 @@ def main():
         dog.brothers.append('lily')
         dog.brothers.append('boby')
 
+        rospy.loginfo('Publishing dog message with name ' +
+                      getattr(colorama.Fore, highlight_text_color) +
+                      str(dog.name) + colorama.Style.RESET_ALL)
         pub.publish(dog)
+
+        frequency = rospy.get_param("~frequency", default=1)
+        rate = rospy.Rate(frequency)  # 1hz
         rate.sleep()
 
     # ---------------------------------------------------
