@@ -52,7 +52,7 @@ image::docs/Lidar2DAtlascar2A.png[]
 image::docs/Lidar2DAtlascar2B.png[]
 
 Descarregue este https://drive.google.com/file/d/1RiiccHi6llD1sy86LHVL0QpZzrQQCFuT/view?usp=sharing[bag file] com mensagens de um LiDAR 2D. Pode inspecionar o bag com o comando _rosbag info <bag_name>_.
-Faça o playback do bagfile em modo contínuo (flag -l).
+
 
 [source,bash]
 -----------------------------------------------------------------
@@ -105,6 +105,10 @@ float32[] intensities    # intensity data [device-specific units].  If your
 -----------------------------------------------------------------
 
 Pode consultar o manual com todas as http://wiki.ros.org/sensor_msgs[sensor_msgs] de modo a analisar o tipo de dados de que necessita a cada momento.
+
+Faça o playback do bagfile em modo contínuo (flag -l) com o comando:
+
+    rosbag play <bag file name> -l
 
 Escreva um script python denominado _lidar_subscriber.py_, que receba mensagens do tipo _sensor_msgs/laserscan_, converta a informação
 contida nestas mensagens de coordenadas polares para coordenadas cartesianas, de modo a construir uma mensagem do tipo http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html[sensor_msgs/PointCloud2].
