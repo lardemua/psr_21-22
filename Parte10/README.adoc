@@ -114,7 +114,6 @@ Escreva um script python denominado _lidar_subscriber.py_, que receba mensagens 
 contida nestas mensagens de coordenadas polares para coordenadas cartesianas, de modo a construir uma mensagem do tipo http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html[sensor_msgs/PointCloud2].
 Esta núvem de pontos correspondente a cada laser scan deve ser publicada.
 
-
 ============================================
 Crie um novo package ros _psr_aula10_ onde irá colocar todos os scripts desenvolvidos.
 ============================================
@@ -153,7 +152,7 @@ Aqui um https://youtu.be/mUDw0K91olU[vídeo] do que se pode fazer neste exercíc
 
 Pode também visualizar dados de outros sensores 3D mais recentes como um velodyne.
 
-Exercício 4 - Câmaras RGB
+Exercício 3 - Câmaras RGB
 -------------------------
 
 As câmaras RGB são as câmaras do espectro visível a que mais estamos habituados. Um exemplo é a câmara o portátil que usamos no PSR AR Paint.
@@ -217,12 +216,12 @@ Pode ainda configurar o RViz para fazer a visualização das imagens e dos Lidar
 Uma vez que a configuração se pode tornar bastante demorada, recomenda-se a gravação de um ficheiro de configuração rviz.
 ============
 
-Exercício 5 - Launch file PR2 bagfile
+Exercício 4 - Launch file PR2 bagfile
 -------------------------------------
 Escreva um launch file para lançar o playback do bagfile do PR2 e o RViz devidamente configurado.
 
 
-Exercício 6 - Publicação de imagens RGB
+Exercício 5 - Publicação de imagens RGB
 ---------------------------------------
 
 Escreva um nó que faça a leitura das imagens da webcam do seu portátil usando as ferramentas do OpenCV, e depois publique essas imagens em mensagens ROS do tipo _sensor_msgs/Image_.
@@ -236,7 +235,7 @@ Um bom ponto de partida pode ser a resolução do Exercício 2b) da aula 6.
 .Exemplo de visualização da imagem numa janela OpenCV (lançada pelo nó publicador) e numa janela _rqt_image_view_ que recebe a imagem no formato de mensagem ROS.
 image::docs/publish_image_example.png[]
 
-Exercício 7 - Câmaras RGBD
+Exercício 6 - Câmaras RGBD
 --------------------------
 
 Existe uma segunda categoria de câmaras que tem vindo a ser muito utilizada.
@@ -255,15 +254,15 @@ https://www.youtube.com/watch?v=jLJqY2fKTdI[Neste exemplo] pode ver-se um sistem
 
 Em ros o http://wiki.ros.org/openni2_camera[pakcage openni2] contem os drivers para interface com câmaras RGBD.
 
-Ex 7 a)
+Ex 6 a)
 ~~~~~~
 Descarregue este https://drive.google.com/file/d/1lWIOeEOJvzJzY_M_nGW4fMTqSXaZJzt4/view?usp=sharing[bagfile] e faça o seu playback. Visualize as mensagens no RViz.
 
-Ex 7 b)
+Ex 6 b)
 ~~~~~~
 Crie um nó ROS que subscreva as mensagens com as nuvens de pontos, e que publique uma nuvem de pontos que seja uma amostragem da nuvem original.
 
-Exercício 8 - Visualization Msgs do RViz
+Exercício 7 - Visualization Msgs do RViz
 ----------------------------------------
 
 O RViz permite a visualização de dados contidos em mensagens ROS. Muitas destas mensagens contêm dados sensoriais, como vimos em exercícios anteriores.
@@ -275,7 +274,7 @@ Mais informação nestes https://wiki.ros.org/rviz/Tutorials[tutoriais para RViz
 
 Crie um nó que publique três _Marker_, uma esfera esverdeada semi-transparente com um cubo vermelho opaco no seu centro, e um texto perto destas formas a indicar o raio da esfera.
 
-Exercício 9 - Clustering the dados Lidar2D
+Exercício 8 - Clustering the dados Lidar2D
 ------------------------------------------
 
 Implemente um nó ROS que receba mensagens _LaserScan_ e faça o clustering dos vários objetos presentes no scan do lidar.
