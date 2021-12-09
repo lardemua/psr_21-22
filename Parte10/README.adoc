@@ -252,7 +252,7 @@ As câmaras RGBD produzem várias mensagens simultâneamente:
 A informação das nuvens de pontos com cor é muito útil para a realização de várias tarefas.
 https://www.youtube.com/watch?v=jLJqY2fKTdI[Neste exemplo] pode ver-se um sistema de perceção de objetos que faz a deteção, o seguimento, a classificação e aprendizagem em tempo real de vários objetos.
 
-Em ros o http://wiki.ros.org/openni2_camera[pakcage openni2] contem os drivers para interface com câmaras RGBD.
+Em ros o http://wiki.ros.org/openni2_camera[package openni2] contem os drivers para interface com câmaras RGBD.
 
 Ex 6 a)
 ~~~~~~
