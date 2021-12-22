@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot name="scara_p3">
+
+
+  <link name="base_link">
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <cylinder length="0.6" radius="0.2"/>-->
+<!--      </geometry>-->
+<!--    </visual>-->
+  </link>
+
+   <link name="link1">
+  </link>
+
+  <joint name="base_link_to_lin1" type="continuous">
+    <axis xyz="0 0 1"/>
+<!--    <limit effort="1000.0" lower="0.0" upper="0.548" velocity="0.5"/>-->
+    <origin xyz="0.0 0.0 2.0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="link1"/>
+  </joint>
+
+
+</robot>
