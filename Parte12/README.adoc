@@ -751,7 +751,7 @@ e depois a compilação do catkin workspace:
 ================
 Um agradecimento ao João Bernardo, investigador do IEETA pela cedência dos pacotes de simulação do FNR.
 ================
-image::example_of_race.png[]
+image::docs/example_of_race.png[]
 
 A competição consiste na condução manual de uma volta completa. Um exemplo aqui neste
 https://youtu.be/N0IIMpSzA7A[vídeo].
