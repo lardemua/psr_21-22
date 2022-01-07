@@ -19,7 +19,7 @@ Miguel Riem Oliveira
 
 |image:docs/set_initial_estimate.gif[] https://github.com/lardemua/atlascar2[AtlasCar2]
 |image:docs/join_hand_base_optimization.gif[] https://github.com/lardemua/atom[ATOM]
-|image:docs/mov10.gif[] https://www.iros2020.org/[IROS 2014]
+|image:docs/mov10.gif[] https://www.iros2020.org/[FNR 2011]
 
 |image:docs/collect_data_agrob.gif[] https://www.researchgate.net/publication/335773466_Parallelization_of_a_Vine_Trunk_Detection_Algorithm_For_a_Real_Time_Robot_Localization_System/figures?lo=1[AgrobV2]
 |image:docs/SEV_final_rt.gif[] https://github.com/miguelriemoliveira/RustBot[Projecto SEV]
