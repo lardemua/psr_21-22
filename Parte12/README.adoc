@@ -438,7 +438,7 @@ Exercício 3 - Robot Description
 
 Crie um novo _ros package_ denominado **<player_name>_description**. Nesse package crie uma pasta urdf e coloque lá dentro os ficheiros urdf e xacro de que vai necessitar.
 
-Crie (ou copie do turtlebot3_description) os xacros necessários de modo a que o seu robô tenha elementos com a cor da sua equipa, com descrito acima.
+Crie (ou copie do https://github.com/ROBOTIS-GIT/turtlebot3/tree/master/turtlebot3_description[turtlebot3_description]) os xacros necessários de modo a que o seu robô tenha elementos com a cor da sua equipa, com descrito acima.
 Para alterar a cor de elementos deve ver http://gazebosim.org/tutorials?tut=ros_urdf[este tutorial].
 
 
@@ -746,7 +746,6 @@ Faça uma atualização dos pacotes com o comando:
 e depois a compilação do catkin workspace:
 
   cd ~/catkin_ws && catkin_make
-
 
 ================
 Um agradecimento ao João Bernardo, investigador do IEETA pela cedência dos pacotes de simulação do FNR.
