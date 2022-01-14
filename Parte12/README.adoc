@@ -472,7 +472,7 @@ Crie um novo ros package chamado **<player_name>_bringup** onde coloca três lau
 
    - Um segundo launch file chamado **spawn.launch** deverá fazer o spawn do robot (o bloco 4 do turtlebot3_house.launch)
 
-   - Um terceiro launch file chamado brinpup.launch, os blocos 1 e 3 do turtlebot3_house.launch, e um include do segundo launch file de _spawn_ do robot.
+   - Um terceiro launch file chamado bringup.launch, os blocos 1 e 3 do turtlebot3_house.launch, e um include do segundo launch file de _spawn_ do robot.
 
 Em baixo um sumário dos ficheiro presentes no package _p_moliveira_bringup.
 
@@ -682,7 +682,7 @@ O ficheiro player.gazebo.xacro contém ainda as definições para a simulação 
 Esta propriedade é global e pode portanto ser consultada por todos os ficheiros xacro incluídos. No entanto, para melhor organizar o código,
 é recomendável que um ficheiro xacro não necessite de uma propriedade definida noutro ficheiro.
 
-O ficheiro _player.gazebo.macro.xacro_ é uma macro, que é uma/home/mike/CATKIN_SRC_CODE_BACKUP/pari_20-21_solutions espécie de função para xacros. Tal como nas funções, as macros têm argumentos de entrada.
+O ficheiro _player.gazebo.macro.xacro_ é uma macro, que é uma espécie de função para xacros. Tal como nas funções, as macros têm argumentos de entrada.
 Neste caso a propriedade **player_color** deve ser dada como argumento de entrada para a macro definida no ficheiro _player.gazebo.macro.xacro_.
 
 Assim, pretende-se transformar o ficheiro _player.gazebo.xacro_ numa http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File[macro com argumentos de entrada].
