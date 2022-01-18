@@ -8,6 +8,27 @@
 <!--    <xacro:include filename="$(find p_moliveira_description)/urdf/player.gazebo.macro.xacro"/>-->
 <!--  <xacro:gazebo_macro player_color="$(arg player_color)" laser_visual="false" camera_visual="false" imu_visual="true"/>-->
 
+  <!-- Tables properties-->
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:property name="table_height" value="0.795"/>
+  <xacro:property name="table_width" value=".9"/>
+  <xacro:property name="table_lenght" value="0.9"/>
+  <xacro:property name="table_tabletop_thickness" value="0.015"/>
+  <xacro:property name="table_leg_radius" value="0.02"/>
+  <xacro:include filename="$(find p_moliveira_description_tp)/urdf/table.macro.xacro"/>
+  <xacro:table_macro name="table" parent="base_link" width="${table_width}"
+                       lenght="${table_lenght}" height="${table_height}"
+                       tabletop_thickness="${table_tabletop_thickness}" leg_radius="${table_leg_radius}">
+        <origin xyz="-1 0 0" rpy="0 0 ${M_PI/2}" />
+  </xacro:table_macro>
+
+  <xacro:table_macro name="table2" parent="base_link" width="${table_width}"
+                       lenght="${table_lenght}" height="${table_height}"
+                       tabletop_thickness="${table_tabletop_thickness}" leg_radius="${table_leg_radius}">
+        <origin xyz="-1 0 3" rpy="0 0 ${M_PI/2}" />
+  </xacro:table_macro>
+
+
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
