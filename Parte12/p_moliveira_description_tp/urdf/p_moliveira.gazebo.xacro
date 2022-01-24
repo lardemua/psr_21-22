@@ -7,8 +7,9 @@
   <gazebo reference="base_link">
 <!--    <material>Gazebo/Yellow</material>-->
 <!--    <material>Gazebo/SarasColor</material>-->
-<!--    <material>Gazebo/Yellow</material>-->
-    <material>Gazebo/Bricks</material>
+    <material>Gazebo/Yellow</material>
+    <material>Gazebo/${player_color}</material>
+<!--    <material>Gazebo/Bricks</material>-->
   </gazebo>
 
   <gazebo reference="wheel_left_link">
@@ -153,9 +154,9 @@
       <always_on>true</always_on>
       <visualize>$(arg camera_visual)</visualize>
       <camera>
-          <horizontal_fov>1.085595</horizontal_fov>
+          <horizontal_fov>2.085595</horizontal_fov>
           <image>
-              <width>640</width>
+              <width>1280</width>
               <height>480</height>
               <format>R8G8B8</format>
           </image>

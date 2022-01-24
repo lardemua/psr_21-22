@@ -24,7 +24,7 @@ Control Your TurtleBot3!
 ---------------------------
 Moving around:
         w
-   a    s    d
+   a    s    d 
         x
 
 w/x : increase/decrease linear velocity (Burger : ~ 0.22, Waffle and Waffle Pi : ~ 0.26)
@@ -106,7 +106,7 @@ if __name__=="__main__":
     rospy.init_node('turtlebot3_teleop')
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 
-    turtlebot3_model = rospy.get_param("model", "burger")
+    turtlebot3_model = rospy.get_param("model", "waffle_pi")
 
     status = 0
     target_linear_vel   = 0.0
@@ -134,10 +134,14 @@ if __name__=="__main__":
                 target_angular_vel = checkAngularLimitVelocity(target_angular_vel - ANG_VEL_STEP_SIZE)
                 status = status + 1
                 print(vels(target_linear_vel,target_angular_vel))
-            elif key == ' ' or key == 's' :
+            elif key == ' ':
                 target_linear_vel   = 0.0
                 control_linear_vel  = 0.0
                 target_angular_vel  = 0.0
+                control_angular_vel = 0.0
+                print(vels(target_linear_vel, target_angular_vel))
+            elif key == 's':
+                target_angular_vel = 0.0
                 control_angular_vel = 0.0
                 print(vels(target_linear_vel, target_angular_vel))
             else:
