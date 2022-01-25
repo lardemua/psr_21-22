@@ -208,15 +208,35 @@ mensagem ROS no tópico contact (com um push para o namespace do robô).
 
 
 =========================================================================
-O nome da _collision_ a colocar não é arbitrário. Será o nome que a colisão terá quando o ficheiro xacro for processado,
+
+O nome da _collision_ a colocar em cima não é arbitrário. Tem de ser o nome que a colisão terá quando o ficheiro xacro for processado,
 transformado primeiro para **urdf** e posteriormente para **sdf**. Para verificar o nome que deve colocar faça manualmente esta
 conversão com os comandos:
 
     roscd <player_name>_description/urdf
-    rosrun xacro xacro --inorder <player_name>.urdf.xacro > <player_name>.urdf
+    rosrun xacro xacro <player_name>.urdf.xacro -o <player_name>.urdf
     gz sdf -p <player_name>.urdf > <player_name>.sdf
 
-Verifique depois no ficheiro <player_name>.sdf o nome da colisão a colocar deve ser o que está neste ficheiro.
+Verifique depois no ficheiro <player_name>.sdf o nome da colisão a colocar.o
+Procure pelo campo **sensor** e deverá encontrar algo como:
+
+```xml
+<sensor name='base_link' type='contact'>
+    <update_rate>1000</update_rate>
+    <always_on>1</always_on>
+    <contact>
+        <collision>base_footprint_fixed_joint_lump__base_link_collision_collision</collision>
+        <topic>__default_topic__</topic>
+    </contact>
+    <plugin name='base_link_contact_sensor_plugin' filename='libgazebo_ros_bumper.so'>
+    <bumperTopicName>contact</bumperTopicName>
+    <frameName>world</frameName>
+    </plugin>
+    <pose>0 0 0.01 0 -0 0</pose>
+</sensor>
+```
+
+deve ser o que está neste ficheiro.
 
 Mais informação https://answers.gazebosim.org//question/20432/ros-gazebo-detecting-collision-with-a-static-object-using-contact-sensor/[aqui].
 
