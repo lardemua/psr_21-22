@@ -43,6 +43,22 @@ class Referee:
 
     def __init__(self):
 
+        rospy.sleep(0.5)  # Wait a bit before starting
+
+        # Verify that all the required parameters exist
+        try:
+            existing_params = rospy.get_param_names()
+        except rospy.ROSException:
+            print("Could not get param name")
+
+        required_params = ['/killed_duration', '/game_duration', '/positive_score', '/negative_score', '/best_hunter_score',
+                           '/best_survivor_score', '/red_players', '/green_players', '/blue_players']
+        print(existing_params)
+        for required_param in required_params:
+            if not required_param in existing_params:
+                raise ValueError('Required ros parameter ' + required_param +
+                                 ' does not exist. Are you sure you load the game params.yaml?')
+
         self.params = {'killed_duration': rospy.get_param('/killed_duration'),
                        'game_duration': rospy.get_param('/game_duration'),
                        'positive_score': rospy.get_param('/positive_score'),
@@ -57,31 +73,32 @@ class Referee:
         self.score = {'red': 0, 'green': 0, 'blue': 0}
         self.final_score = {'red': 0, 'green': 0, 'blue': 0}
 
-        # Create an instance for each player
-        self.players = {}
-        count = 1
-        for player in self.params['red']:
-            self.players[player] = PlayerInfo(player, self.params, team_my='red', team_prey='green', team_hunter='blue',
-                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
-            count += 1
-        for player in self.params['green']:
-            self.players[player] = PlayerInfo(player, self.params, team_my='green', team_prey='blue', team_hunter='red',
-                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
-            count += 1
-        for player in self.params['blue']:
-            self.players[player] = PlayerInfo(player, self.params, team_my='blue', team_prey='red', team_hunter='green',
-                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
-            count += 1
-
         rospy.wait_for_service('/gazebo/set_model_state')  # check that this service exists
 
         self.killed = []
         self.game_over = False
         rospy.sleep(0.1)
-        self.game_start_tic = rospy.Time.now()
 
+        # Create an instance for each player
+        self.players = {}
+        count = 1
+        for player in self.params['red']:
+            self.players[player] = PlayerInfo(player, self.params, my_team='red', prey_team='green', hunter_team='blue',
+                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
+            count += 1
+        for player in self.params['green']:
+            self.players[player] = PlayerInfo(player, self.params, my_team='green', prey_team='blue', hunter_team='red',
+                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
+            count += 1
+        for player in self.params['blue']:
+            self.players[player] = PlayerInfo(player, self.params, my_team='blue', prey_team='red', hunter_team='green',
+                                              callbackHuntedEvent=self.callbackHuntedEvent, number=count)
+            count += 1
+
+        self.game_start_tic = rospy.Time.now()
         self.timer_check_game = rospy.Timer(rospy.Duration(0.1), self.callbackCheckGame, oneshot=False)
-        self.timer_end_game = rospy.Timer(rospy.Duration(self.params['game_duration']), self.callbackEndGame, oneshot=True)
+        self.timer_end_game = rospy.Timer(rospy.Duration(self.params['game_duration']), self.callbackEndGame,
+                                          oneshot=True)
 
     def callbackEndGame(self, event):
 
@@ -90,16 +107,17 @@ class Referee:
         # Print scoreboard
         self.printScores()
 
-        #Game over message
-        winner = '(it\'s a tie)'
-        if self.final_score['red'] > max(self.final_score['green'], self.final_score['blue']):
-            winner = Fore.RED + 'Red' + Fore.RESET
-        if self.final_score['green'] > max(self.final_score['red'], self.final_score['blue']):
-            winner = Fore.GREEN + 'Green' + Fore.RESET
-        if self.final_score['blue'] > max(self.final_score['green'], self.final_score['red']):
-            winner = Fore.BLUE + 'Blue' + Fore.RESET
+        # Game over message
+        if self.final_score['red'] == self.final_score['green'] and self.final_score['red'] == self.final_score['blue']:
+            print(Style.BRIGHT + 'Game Over! It is a tie!!!')
+        elif self.final_score['red'] > max(self.final_score['green'], self.final_score['blue']):
+            print(Style.BRIGHT + 'Game Over! Team ' + Fore.RED + 'Red' + Fore.RESET + ' wins!!!')
+        elif self.final_score['green'] > max(self.final_score['red'], self.final_score['blue']):
+            print(Style.BRIGHT + 'Game Over! Team ' + Fore.GREEN + 'Green' + Fore.RESET + ' wins!!!')
+        elif self.final_score['blue'] > max(self.final_score['green'], self.final_score['red']):
+            print(Style.BRIGHT + 'Game Over! Team ' + Fore.BLUE + 'Blue' + Fore.RESET + ' wins!!!')
 
-        print(Style.BRIGHT + 'Game Over! Team ' + winner + ' wins!!!')
+        rospy.signal_shutdown('Game finished')
 
     def printScores(self):
 
@@ -117,10 +135,13 @@ class Referee:
                 num_preyed = Back.MAGENTA + str(player.num_preyed) + Style.RESET_ALL
 
             time_to_spawn = self.params['killed_duration'] - (rospy.Time.now() - player.stamp_killed).to_sec()
+
             if time_to_spawn < 0:
                 time_to_spawn = '---'
+            else:
+                time_to_spawn = "{:.1f}".format(time_to_spawn)
             table.add_row([player.colorama_color + player.name + Fore.RESET,
-                           player.colorama_color + player.team_my + Fore.RESET,
+                           player.colorama_color + player.my_team + Fore.RESET,
                            num_hunted, num_preyed, player.name in self.killed, time_to_spawn])
 
         table.align = 'c'
@@ -139,10 +160,12 @@ class Referee:
                 self.final_score[team_key] += self.params['best_hunter_score']
             if best_survivor in self.params[team_key]:
                 self.final_score[team_key] += self.params['best_survivor_score']
-            table.add_row([getattr(Fore, team_key.upper()) + team_key + Style.RESET_ALL, str(score), str(self.final_score[team_key])])
+            table.add_row([getattr(Fore, team_key.upper()) + team_key + Style.RESET_ALL, str(score),
+                           str(self.final_score[team_key])])
 
         print(table)
-        print('Game time: ' + str((rospy.Time.now() - self.game_start_tic).to_sec()) + ' out of ' + str(self.params['game_duration']))
+        game_time = "{:.1f}".format((rospy.Time.now() - self.game_start_tic).to_sec())
+        print('Game time: ' + game_time + ' out of ' + str(self.params['game_duration']))
 
     def getBestHunterAndSurvivor(self):
 
@@ -189,8 +212,8 @@ class Referee:
             self.players[hunter].num_hunted += 1
             self.players[prey].num_preyed += 1
 
-            self.score[self.players[hunter].team_my] += self.params['positive_score']
-            self.score[self.players[prey].team_my] += self.params['negative_score']
+            self.score[self.players[hunter].my_team] += self.params['positive_score']
+            self.score[self.players[prey].my_team] += self.params['negative_score']
 
     def killPlayer(self, name):
         self.killed.append(name)
@@ -227,21 +250,21 @@ class Referee:
         try:
             set_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
             resp = set_state(state_msg)
-        except rospy.ServiceException, e:
+        except rospy.ServiceException as e:
             print("Service call failed:" + str(e))
 
 
 class PlayerInfo:
 
-    def __init__(self, name, players, team_my, team_prey, team_hunter, callbackHuntedEvent, number=1):
+    def __init__(self, name, players, my_team, prey_team, hunter_team, callbackHuntedEvent, number=1):
         self.name = name
         self.number = number
         self.players = players
-        self.colorama_color = getattr(Fore, team_my.upper())
-        self.team_my, self.team_prey, self.team_hunter = team_my, team_prey, team_hunter
+        self.colorama_color = getattr(Fore, my_team.upper())
+        self.my_team, self.prey_team, self.hunter_team = my_team, prey_team, hunter_team
 
-        print('My name is ' + self.name + '. I am team ' + self.team_my + ' I am hunting ' + str(
-            self.players[self.team_prey]) + ' and fleeing from ' + str(self.players[self.team_hunter]))
+        print('Referee configuring ' + self.name + ', from team ' + self.my_team + ', hunting ' + str(
+            self.players[self.prey_team]) + ' and fleeing from ' + str(self.players[self.hunter_team]))
 
         self.callbackHuntedEvent = callbackHuntedEvent
 
@@ -272,13 +295,13 @@ class PlayerInfo:
             # print('self.players[self.team_prey] ' + str(self.players[self.team_prey]))
 
             # Check if collision is between this object and one of its preys
-            if object1 == self.name and object2 in self.players[self.team_prey]:
+            if object1 == self.name and object2 in self.players[self.prey_team]:
                 self.callbackHuntedEvent(self.name, object2)
-            elif object2 == self.name and object1 in self.players[self.team_prey]:
+            elif object2 == self.name and object1 in self.players[self.prey_team]:
                 self.callbackHuntedEvent(self.name, object1)
 
     def __str__(self):
-        s = 'Player ' + self.colorama_color + self.name + Style.RESET_ALL + ' (team ' + self.team_my + ')\t'
+        s = 'Player ' + self.colorama_color + self.name + Style.RESET_ALL + ' (team ' + self.my_team + ')\t'
         s += 'Hunted: ' + str(self.num_hunted) + ' ; Preyed: ' + str(self.num_preyed)
         return s
 

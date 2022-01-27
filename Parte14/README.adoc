@@ -16,7 +16,7 @@ O jogo Team Hunt
 Exercício 1 - Launch file para o jogo
 -------------------------------------
 
-Crie um ficheiro game_bringup.launch que inicia três equipas: **Red**, **Green** e **Blue**, cada uma para já com apenas um jogador.
+Crie um ficheiro **game_bringup.launch** que inicia três equipas: **red**, **green** e **blue**, cada uma para já com apenas um jogador.
 
 =========================================================================
 Pode colocar mais do que um jogador por equipa, mas o sistema pode ficar pesado. Pelo menos durante a fase de testes recomenda-se ter um sistema rápido e ágil para maximizar
@@ -74,7 +74,7 @@ Recorde http://wiki.ros.org/rospy_tutorials/Tutorials/Parameters[este tutorial s
 Exercício 3 - Configuração das equipas
 --------------------------------------
 
-Extenda a funcionalidade do exercício anterior de modo a que seja possível ao código ter acesso às cores das equipas:
+Estenda a funcionalidade do exercício anterior de modo a que seja possível ao código ter acesso às cores das equipas:
 
 1. _my_team_ a cor da equipa a que o jogador pertence
 2. _prey_team_ a cor da equipa que está a ser caçada pelo jogador
@@ -112,13 +112,13 @@ semelhante ao que se fazia em RViz.
 
 
 =========================================================================
-Para utilizar dados Lidar terá adicionar um objeto mais largo ao robô de modo a que o Lidar consiga recolher dados.
+Para utilizar dados Lidar poderá ter de adicionar um objeto mais largo ao robô de modo a que os feixes do Lidar consigam bater no robõ e assim detetá-lo.
 =========================================================================
 
 Exercício 5 - Colisões em Gazebo
 --------------------------------
 
-Uma das funcionalidades bastante interessantes do Gazebo é a a capacidade de detetar colisões entre os objetos (e os componentes desses objetos)
+Uma das funcionalidades bastante interessantes do Gazebo é a capacidade de detetar colisões entre os objetos (e os componentes desses objetos)
 que estão colocados no mundo. Note que quando lança o seu robô, mesmo que no _empty world_ do Gazebo, o robô fica sempre no plano XoY.
 Isto é porque há um objeto chamado _ground_ que é um plano Z=0. Os robôs não caiem por gravidade porque o Gazebo deteta uma
 colisão entre o robô e o objeto _ground_.
@@ -190,7 +190,7 @@ Para criar um sensor é necessário acrescentar à descrição do robô (o fiche
       <update_rate>1000.0</update_rate>
       <always_on>true</always_on>
       <contact>
-        <collision>base_footprint_fixed_joint_lump__base_link_collision_collision</collision>
+        <collision> "< nome da colisão a colocar >" </collision>
       </contact>
       <plugin name="base_link_contact_sensor_plugin" filename="libgazebo_ros_bumper.so">
         <bumperTopicName>contact</bumperTopicName>
@@ -206,37 +206,49 @@ O sensor de contacto é assim um detetor de colisões especialmente dedicado à 
 O plugin _libgazebo_ros_bumper.so_ serve para traduzir para ROS as colisões detetadas por este sensor. Será publicada uma
 mensagem ROS no tópico contact (com um push para o namespace do robô).
 
-
 =========================================================================
 
 O nome da _collision_ a colocar em cima não é arbitrário. Tem de ser o nome que a colisão terá quando o ficheiro xacro for processado,
-transformado primeiro para **urdf** e posteriormente para **sdf**. Para verificar o nome que deve colocar faça manualmente esta
-conversão com os comandos:
+transformado primeiro para **urdf** e posteriormente para **sdf**. Para verificar o nome que deve colocar faça manualmente uma colisão entre o robô e um cubo no gazebo como no exemplo da imagem:
 
-    roscd <player_name>_description/urdf
-    rosrun xacro xacro <player_name>.urdf.xacro -o <player_name>.urdf
-    gz sdf -p <player_name>.urdf > <player_name>.sdf
+.Exemplo simples de colisão
+image::docs/simulated_collision.png[]
 
-Verifique depois no ficheiro <player_name>.sdf o nome da colisão a colocar.o
-Procure pelo campo **sensor** e deverá encontrar algo como:
+e depois descubra a colisão do base link do robô com o cubo que adicionou ao gazebo (unit_box) com o comando:
+
+    gz topic -e /gazebo/default/physics/contacts
+
+Por exemplo neste caso o comando em cima resultou em
 
 ```xml
-<sensor name='base_link' type='contact'>
-    <update_rate>1000</update_rate>
-    <always_on>1</always_on>
-    <contact>
-        <collision>base_footprint_fixed_joint_lump__base_link_collision_collision</collision>
-        <topic>__default_topic__</topic>
-    </contact>
-    <plugin name='base_link_contact_sensor_plugin' filename='libgazebo_ros_bumper.so'>
-    <bumperTopicName>contact</bumperTopicName>
-    <frameName>world</frameName>
-    </plugin>
-    <pose>0 0 0.01 0 -0 0</pose>
-</sensor>
+wrench {
+    body_1_name: "p_moliveira::base_footprint::base_footprint_fixed_joint_lump__base_link_collision"
+    body_1_id: 4492
+    body_2_name: "unit_box::link::collision"
+    body_2_id: 1131
+}
 ```
 
-deve ser o que está neste ficheiro.
+O que quer dizer que o campo collision no xacro do robô deverá ficar com o nome
+**base_footprint_fixed_joint_lump__base_link_collision**, i.e.:
+
+[source,xml]
+--------------------------------------------------------
+<gazebo reference="base_link">
+    <sensor name="base_link" type="contact">
+      <update_rate>1000.0</update_rate>
+      <always_on>true</always_on>
+      <contact>
+        <collision> "base_footprint_fixed_joint_lump__base_link_collision" </collision>
+      </contact>
+      <plugin name="base_link_contact_sensor_plugin" filename="libgazebo_ros_bumper.so">
+        <bumperTopicName>contact</bumperTopicName>
+        <frameName>world</frameName>
+      </plugin>
+    </sensor>
+
+  </gazebo>
+--------------------------------------------------------
 
 Mais informação https://answers.gazebosim.org//question/20432/ros-gazebo-detecting-collision-with-a-static-object-using-contact-sensor/[aqui].
 
@@ -353,6 +365,10 @@ Um dos principais parâmetros é a colisão entre um caçador e uma presa, que �
 Por não haver tempo suficiente o árbitro é dado já desenvolvido, cabendo aos alunos integrar este software na sua framework de modo a conseguir executar jogos de **Team Hunt**.
 
 Recomenda-se que este nó seja executado num terminal separado por forma a ser o único programa a imprimir para o terminal, visto que este nó imprime o score do jogo ao longo do tempo.
+
+Para lançar o árbitro basta correr:
+
+   rosrun th_referee th_referee
 
 Este https://youtu.be/3RablFrylyw[vídeo] mostra o jogo com o árbitro operacional.
 
